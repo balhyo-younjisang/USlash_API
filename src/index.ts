@@ -1,4 +1,8 @@
 import express from 'express';
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
+import dotenv from 'dotenv';
+dotenv.config();
 import { articleRouter } from './routes';
 
 const app = express();
