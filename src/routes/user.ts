@@ -12,7 +12,7 @@ userRouter.get("/register", (req, res) => {
 });
 
 userRouter.post("/register", async (req, res) => {
-  const { username, password, gender, birth } = req.body;
+  const { username, password, phonenumber, mail } = req.body;
   const name = await User.findOne({ username });
   if (name) {
     return res.json({
@@ -23,8 +23,8 @@ userRouter.post("/register", async (req, res) => {
   const user = new User({
     username,
     password: userpassword,
-    gender,
-    birth,
+    phonenumber,
+    mail,
   });
   await user.save();
   return res.json({ message: "성공했습니다." });
